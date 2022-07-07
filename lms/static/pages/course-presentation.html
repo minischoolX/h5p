@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> H5P Interactive Activity </title>
+  <link type="text/css" rel="stylesheet" media="all" href="/lms/static/dist/styles/h5p.css" />
+  <meta charset="utf-8" />
+  <script type="text/javascript" src="/lms/static/dist/main.bundle.js"></script>
+</head>
+
+<body>
+  <div id="h5p-container"></div>
+  <script type="text/javascript">
+    const {
+      H5P
+    } = H5PStandalone;
+    new H5P(document.getElementById('h5p-container'),  {
+      contentJsonPath: '/lms/static/contentjson/course-presentation.json',
+      h5pJsonPath: '/lms/static/h5pjson/course-presentation.json',
+      librariesPath: '/lms/static/library',
+      frameJs: '/lms/static/dist/frame.bundle.js',
+      frameCss: '/lms/static/dist/styles/h5p.css',
+      fullscreen: false // do you think??
+    });
+  </script>
+</body>
+
+</html>
