@@ -859,13 +859,18 @@ ai_js_code = true;
 
 
 	
-const element = document.querySelector('#mh-mobile > div.mh-container.mh-container-outer > header > div.mh-main-nav-wrap > div:nth-child(2)');
-if (element) {
-    element.style.display = 'none';
-} else {
-    console.error('Element not found!');
-}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const element = document.querySelector('#mh-mobile > div.mh-container.mh-container-outer > header > div.mh-main-nav-wrap > div:nth-child(2)');
+        if (element) {
+            element.style.display = 'none';
+        } else {
+            console.error('Element not found!');
+        }
+    });
+</script>
 
+	
 
 
 
