@@ -842,6 +842,35 @@ ai_js_code = true;
     });
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Select the parent node where the dynamic element will be added
+        const parentNode = document.querySelector('#mh-mobile > div.mh-container.mh-container-outer > header > div.mh-main-nav-wrap');
+        
+        if (parentNode) {
+            // Create a MutationObserver to monitor the parent node
+            const observer = new MutationObserver((mutationsList) => {
+                for (const mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        // Check if the dynamically added element is present
+                        const element = parentNode.querySelector('div:nth-child(2)');
+                        if (element) {
+                            element.remove(); // Remove the element
+                            console.log('Dynamic element removed successfully.');
+                            observer.disconnect(); // Stop observing once done
+                        }
+                    }
+                }
+            });
+
+            // Start observing the parent node for child elements being added
+            observer.observe(parentNode, { childList: true });
+        } else {
+            console.error('Parent node not found!');
+        }
+    });
+</script>
+
 
 
 
