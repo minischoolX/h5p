@@ -829,6 +829,25 @@ ai_js_code = true;
 </script>
 
 
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const element = document.querySelector('#mh-mobile > div.mh-container.mh-container-outer > header > div.mh-main-nav-wrap > div:nth-child(2)');
+        if (element) {
+        element.remove();
+        console.log('Element removed successfully.');
+        } else {
+            console.error('Element not found!');
+        }
+    });
+</script>
+
+
+
+
+
+	
+
 <script data-cfasync="false" type="text/javascript" id="clever-core">
 /* <![CDATA[ */
     (function (document, window) {
@@ -859,21 +878,6 @@ ai_js_code = true;
 
 
 	
-// Function to remove the element
-function removeElement() {
-    const element = document.querySelector('#mh-mobile > div.mh-container.mh-container-outer > header > div.mh-main-nav-wrap > div:nth-child(2)');
-    if (element) {
-        element.remove();
-        console.log('Element removed successfully.');
-    } else {
-        console.error('Element not found. Retrying...');
-        // Retry after 100ms if the element is not found
-        setTimeout(removeElement, 100);
-    }
-}
-
-// Wait until the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', removeElement);
 
 	
 
